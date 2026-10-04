@@ -1,0 +1,462 @@
+/* ===================================
+   CSS Variables (Light Theme Default)
+   =================================== */
+:root {
+  --text-main: #111827;
+  --bg-body: #f4f6f9;
+  --bg-section: #ffffff;
+  --bg-header: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --bg-footer: #0f172a;
+  --accent: #334155;
+  --primary: #007bff;
+  --danger: #dc3545;
+  --success: #28a745;
+  --warning: #ffc107;
+  --border-color: #e2e8f0;
+  --card-bg: #fff;
+  --input-bg: #fff;
+  --input-border: #ccc;
+  --meta-color: #64748b;
+  --table-header-bg: #1e293b;
+  --table-header-color: #fff;
+  --badge-bg: #e2e8f0;
+}
+
+/* ===================================
+   Dark Theme Override
+   =================================== */
+body.dark {
+  --text-main: #e2e8f0;
+  --bg-body: #0f172a;
+  --bg-section: #1e293b;
+  --bg-header: linear-gradient(135deg, #020617 0%, #0f172a 100%);
+  --bg-footer: #020617;
+  --accent: #475569;
+  --border-color: #334155;
+  --card-bg: #1e293b;
+  --input-bg: #334155;
+  --input-border: #475569;
+  --meta-color: #94a3b8;
+  --table-header-bg: #0f172a;
+  --badge-bg: #334155;
+}
+
+/* ===================================
+   Global Reset
+   =================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-main);
+  background-color: var(--bg-body);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* ===================================
+   Header & Navigation
+   =================================== */
+header {
+  background: var(--bg-header);
+  color: white;
+  padding: 1.5rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+header h1 {
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: var(--accent);
+}
+
+.cart-link {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--danger);
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ===================================
+   Container & Layout
+   =================================== */
+main {
+  padding: 20px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section {
+  background: var(--bg-section);
+  padding: 25px;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 8px;
+}
+
+/* ===================================
+   Registration Form & Inputs
+   =================================== */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group input[type="password"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  font-size: 1rem;
+  background: var(--input-bg);
+  color: var(--text-main);
+}
+
+.radio-group,
+.checkbox-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 5px;
+  flex-wrap: wrap;
+}
+
+/* Validation */
+.valid {
+  border: 2px solid var(--success) !important;
+}
+.invalid {
+  border: 2px solid var(--danger) !important;
+}
+.error {
+  color: var(--danger);
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 4px;
+}
+.success {
+  color: var(--success);
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 4px;
+}
+
+button[type="submit"],
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: opacity 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.btn-cart {
+  background: var(--success);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin-left: 8px;
+}
+
+.card-actions {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ===================================
+   Grid & Cards
+   =================================== */
+.grid-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  background: var(--card-bg);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+  text-align: center;
+}
+
+.category-badge {
+  font-size: 0.8rem;
+  background: var(--badge-bg);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.event-meta {
+  font-size: 0.85rem;
+  color: var(--meta-color);
+  margin-top: 10px;
+}
+
+.sold-out-text {
+  color: var(--danger);
+  font-weight: bold;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #999;
+}
+
+/* ===================================
+   Media Container
+   =================================== */
+.media-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+video,
+audio {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* ===================================
+   Lightbox
+   =================================== */
+.lightbox {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 900px;
+  gap: 15px;
+}
+
+.lightbox-image-container {
+  text-align: center;
+  max-width: 80%;
+}
+
+.lightbox-image-container img {
+  max-height: 65vh;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+#lightbox-caption {
+  color: #fff;
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.lightbox-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 12px 18px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.lightbox-controls {
+  margin-top: 20px;
+}
+
+.slideshow-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* ===================================
+   Tables
+   =================================== */
+.participants-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.participants-table th,
+.participants-table td {
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  text-align: left;
+}
+
+.participants-table th {
+  background-color: var(--table-header-bg);
+  color: var(--table-header-color);
+}
+
+/* ===================================
+   Footer
+   =================================== */
+footer {
+  background-color: var(--bg-footer);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+/* ===================================
+   Responsive
+   =================================== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  nav {
+    flex-direction: column;
+    width: 100%;
+  }
+}
